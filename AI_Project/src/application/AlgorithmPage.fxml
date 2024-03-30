@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AlgorithmPage">
+	<children>
+		<ImageView fitHeight="670.0" fitWidth="780.0" layoutX="-3.0" layoutY="-3.0" pickOnBounds="true">
+			<image>
+				<Image url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\th (1).jfif" />
+			</image>
+		</ImageView>
+		<Label fx:id="AlgName" alignment="CENTER" layoutX="185.0" layoutY="62.0" prefHeight="40.0" prefWidth="402.0" textFill="Black">
+			<font>
+				<Font name="Franklin Gothic Demi Cond" size="45.0" />
+			</font>
+		</Label>
+		<Label alignment="CENTER" layoutX="13.0" layoutY="148.0" prefHeight="26.0" prefWidth="307.0" text="Algorithm Properties:">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="23.0" />
+			</font>
+			<textFill>
+				<RadialGradient centerX="0.4118942731277533" centerY="0.5" radius="0.5">
+					<stops>
+						<Stop>
+							<color>
+								<Color red="0.7473683953285217" green="0.6532553434371948" blue="0.7065861225128174" />
+							</color>
+						</Stop>
+						<Stop offset="0.12209027531608181">
+							<color>
+								<Color red="0.10526315867900848" blue="0.06315789371728897" />
+							</color>
+						</Stop>
+						<Stop offset="0.9999113789436372">
+							<color>
+								<Color red="0.5894736647605896" green="0.5589084029197693" blue="0.5767381191253662" />
+							</color>
+						</Stop>
+						<Stop offset="1.0">
+							<color>
+								<Color red="0.15789473056793213" green="0.04385964944958687" blue="0.04385964944958687" />
+							</color>
+						</Stop>
+					</stops>
+				</RadialGradient>
+			</textFill>
+		</Label>
+		<GridPane layoutX="7.0" layoutY="208.0" prefHeight="106.0" prefWidth="320.0" style="-fx-border-radius: 5;">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="206.20001220703125" minWidth="10.0" prefWidth="127.60001220703126" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="199.19998779296876" minWidth="10.0" prefWidth="193.19998779296876" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label alignment="CENTER" prefHeight="26.0" prefWidth="202.0" text="Optimality" textFill="#4b4a43" GridPane.rowIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label alignment="CENTER" prefHeight="26.0" prefWidth="162.0" text="Complet" textFill="#3b3b38">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label fx:id="AlgOpt" alignment="CENTER" prefHeight="26.0" prefWidth="189.0" textFill="#181818" GridPane.columnIndex="1" GridPane.rowIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label fx:id="AlgComplet" alignment="CENTER" prefHeight="26.0" prefWidth="189.0" textFill="#1e1c1c" GridPane.columnIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+			</children>
+		</GridPane>
+		<Label alignment="CENTER" layoutX="364.0" layoutY="120.0" prefHeight="26.0" prefWidth="200.0" text="Path" textFill="#000000f5">
+			<font>
+				<Font name="Arial Rounded MT Bold" size="23.0" />
+			</font>
+		</Label>
+		<ListView fx:id="PathList" layoutX="394.0" layoutY="162.0" opacity="0.75" prefHeight="430.0" prefWidth="200.0" style="-fx-background-color: #BFBFBF; -fx-border-color: Red; -fx-border-width: 2;" />
+		<Button fx:id="exit" layoutX="655.0" layoutY="599.0" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="104.0" style="-fx-border-color: red; -fx-border-insets: 2; -fx-border-radius: 5; -fx-background-color: white; -fx-background-radius: 6; -fx-background-insets: 2;" styleClass="btn" text="Exit">
+			<font>
+				<Font name="Times New Roman Bold" size="15.0" />
+			</font>
+			<graphic>
+				<ImageView blendMode="HARD_LIGHT" fitHeight="35.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\exitIcon.jfif" />
+					</image>
+				</ImageView>
+			</graphic>
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
+		</Button>
+		<Button fx:id="back" layoutX="14.0" layoutY="599.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="104.0" style="-fx-border-color: red; -fx-border-insets: 2; -fx-border-radius: 5; -fx-background-color: white; -fx-background-radius: 6; -fx-background-insets: 2;" styleClass="btn" text="Back">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="15.0" />
+			</font>
+			<graphic>
+				<ImageView blendMode="HARD_LIGHT" fitHeight="35.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\back.jfif" />
+					</image>
+				</ImageView>
+			</graphic>
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
+		</Button>
+		<GridPane layoutX="2.0" layoutY="402.0" prefHeight="86.0" prefWidth="320.0" style="-fx-border-radius: 5;">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="206.20001220703125" minWidth="10.0" prefWidth="174.4" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="199.19998779296876" minWidth="10.0" prefWidth="182.4" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label alignment="CENTER" prefHeight="26.0" prefWidth="198.0" textFill="WHITE" GridPane.rowIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label alignment="CENTER" prefHeight="26.0" prefWidth="176.0" text="Cost to goal" textFill="#464540">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label fx:id="Time" alignment="CENTER" prefHeight="26.0" prefWidth="189.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+				<Label fx:id="Cost" alignment="CENTER" prefHeight="26.0" prefWidth="189.0" textFill="#131313" GridPane.columnIndex="1">
+					<font>
+						<Font name="Franklin Gothic Demi Cond" size="23.0" />
+					</font>
+				</Label>
+			</children>
+		</GridPane>
+		<Label layoutX="135.0" layoutY="24.0" text="Search Algorithms for Route Navigation" textFill="#100f0f">
+			<font>
+				<Font name="Century Schoolbook Bold" size="24.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>

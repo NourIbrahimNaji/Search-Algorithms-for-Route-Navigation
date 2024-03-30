@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0"
+	prefWidth="786.0" xmlns="http://javafx.com/javafx/17"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.MainPage">
+	<children>
+		<ImageView fitHeight="795.0" fitWidth="815.0"
+			layoutX="-14.0" layoutY="-6.0" pickOnBounds="true">
+			<image>
+				<Image
+					url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\LFS112x-Course-Image.png" />
+			</image>
+		</ImageView>
+		<Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0"
+			layoutY="10.0" prefHeight="58.0" prefWidth="772.0"
+			text="Search Algorithms for Route Navigation" textFill="WHITE"
+			underline="true">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="40.0" />
+			</font>
+		</Label>
+		<VBox alignment="TOP_CENTER" layoutX="7.0" layoutY="86.0"
+			prefHeight="2.0" prefWidth="772.0" spacing="10.0"
+			AnchorPane.bottomAnchor="688.0" AnchorPane.leftAnchor="7.0"
+			AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="86.0">
+			<children>
+				<HBox alignment="CENTER" prefHeight="72.0" prefWidth="765.0"
+					spacing="30.0">
+					<children>
+						<RadioButton fx:id="Map" alignment="CENTER_RIGHT"
+							contentDisplay="CENTER" mnemonicParsing="false"
+							onAction="#select" prefHeight="94.0" prefWidth="142.0"
+							textAlignment="CENTER" textFill="WHITE">
+							<font>
+								<Font name="Comic Sans MS Bold Italic" size="24.0" />
+							</font>
+							<padding>
+								<Insets left="20.0" />
+							</padding>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+							<graphic>
+								<ImageView blendMode="SCREEN" fitHeight="100.0"
+									fitWidth="80" opacity="100" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image
+											url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\map.jfif" />
+									</image>
+								</ImageView>
+							</graphic>
+						</RadioButton>
+						<RadioButton fx:id="BFS" mnemonicParsing="false"
+							selected="true" text="BFS" textFill="WHITE">
+							<font>
+								<Font name="Segoe UI Black" size="16.0" />
+							</font>
+							<toggleGroup>
+								<ToggleGroup fx:id="SelectAlgorithm" />
+							</toggleGroup>
+						</RadioButton>
+				
+						<RadioButton fx:id="Astar" mnemonicParsing="false"
+							text="A*_A" textFill="WHITE" toggleGroup="$SelectAlgorithm">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+						</RadioButton>
+						<RadioButton fx:id="Astar_2" mnemonicParsing="false"
+							text="A*_W" textFill="WHITE" toggleGroup="$SelectAlgorithm">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+						</RadioButton>
+						<RadioButton fx:id="UCS" mnemonicParsing="false"
+							text="UCS" textFill="WHITE" toggleGroup="$SelectAlgorithm">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+						</RadioButton>
+							<RadioButton fx:id="Greedy" mnemonicParsing="false"
+							text="Greedy" textFill="WHITE" toggleGroup="$SelectAlgorithm">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+						</RadioButton>
+						
+						<Label>
+							<font>
+								<Font name="Segoe UI Black Italic" size="16.0" />
+							</font>
+						</Label>
+					</children>
+				</HBox>
+				<Separator prefHeight="0.0" prefWidth="1255.0" />
+			</children>
+		</VBox>
+		<HBox alignment="CENTER_LEFT" layoutX="9.0" layoutY="193.0"
+			prefHeight="562.0" prefWidth="253.0" spacing="50.0">
+			<children>
+				<VBox prefHeight="560.0" prefWidth="245.0">
+					<children>
+						<RadioButton fx:id="SelectStart"
+							mnemonicParsing="false" onAction="#select" prefHeight="64.0"
+							prefWidth="194.0" selected="true" text="Start City"
+							textFill="#ffd300" visible="false">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+							<toggleGroup>
+								<ToggleGroup fx:id="StartGoal" />
+							</toggleGroup>
+						</RadioButton>
+						<Label prefHeight="54.0" prefWidth="187.0" visible="false" />
+						<RadioButton fx:id="SelectGoal"
+							mnemonicParsing="false" onAction="#select" prefHeight="50.0"
+							prefWidth="194.0" text="Goal City" textFill="#ffd300"
+							toggleGroup="$StartGoal" visible="false">
+							<font>
+								<Font name="Segoe UI Black" size="18.0" />
+							</font>
+						</RadioButton>
+					</children>
+					<padding>
+						<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+					</padding>
+				</VBox>
+			</children>
+			<opaqueInsets>
+				<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+			</opaqueInsets>
+			<padding>
+
+				<Insets left="15.0" right="15.0" top="2.0" />
+			</padding>
+		</HBox>
+		<ImageView fx:id="GeneralMap" blendMode="ADD"
+			fitHeight="548.0" fitWidth="337.0" layoutX="306.0" layoutY="196.0"
+			pickOnBounds="true" visible="false">
+			<image>
+				<Image url="@../Pictures/palestineNEW.png" />
+			</image>
+		</ImageView>
+		<RadioButton fx:id="RBJaffa" layoutX="407.0"
+			layoutY="491.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+			<toggleGroup>
+				<ToggleGroup fx:id="StartCities" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="RBTubas" layoutX="547.0"
+			layoutY="391.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBTiberias" layoutX="562.0"
+			layoutY="302.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBBisan" layoutX="557.0"
+			layoutY="359.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJenin" layoutX="517.0"
+			layoutY="367.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBQalqelia" layoutX="456.0"
+			layoutY="435.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false" />
+		<RadioButton fx:id="RBRammallah" layoutX="499.0"
+			layoutY="531.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="10.5" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJerusalem" layoutX="504.0"
+			layoutY="555.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBBethlehem" layoutX="496.0"
+			layoutY="577.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBHebron" layoutX="461.0"
+			layoutY="622.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJericho" layoutX="542.0"
+			layoutY="535.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false" />
+		<RadioButton fx:id="RBNazreth" layoutX="511.0"
+			layoutY="314.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBSalfit" layoutX="472.0"
+			layoutY="475.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false" />
+		<RadioButton fx:id="RBBeirAlSabe" layoutX="407.0"
+			layoutY="699.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBGaza" layoutX="344.0"
+			layoutY="624.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBTulkaerm" layoutX="464.0"
+			layoutY="400.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBNablus" layoutX="507.0"
+			layoutY="430.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBHaifa" layoutX="450.0"
+			layoutY="286.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false" />
+		<RadioButton fx:id="RBAcre" layoutX="469.0"
+			layoutY="255.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false" />
+		<RadioButton fx:id="RBSafad" layoutX="557.0"
+			layoutY="240.0" mnemonicParsing="false" onAction="#SelectStartCity"
+			toggleGroup="$StartCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<Button fx:id="run" layoutX="674.0" layoutY="715.0"
+			mnemonicParsing="false" onAction="#run" prefHeight="45.0"
+			prefWidth="97.0"
+			style="-fx-border-color: DARKRED; -fx-border-width: 3; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-insets: 2;"
+			text="Run">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="15.0" />
+			</font>
+			<graphic>
+				<ImageView blendMode="HARD_LIGHT" fitHeight="35.0"
+					fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image
+							url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\runicon.jfif" />
+					</image>
+				</ImageView>
+			</graphic>
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
+		</Button>
+		<RadioButton fx:id="RBJaffa1" layoutX="407.0"
+			layoutY="491.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+			<toggleGroup>
+				<ToggleGroup fx:id="GoalCities" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="RBTubas1" layoutX="547.0"
+			layoutY="391.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBTiberias1" layoutX="562.0"
+			layoutY="302.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBBisan1" layoutX="557.0"
+			layoutY="359.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJenin1" layoutX="517.0"
+			layoutY="367.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBQalqelia1" layoutX="456.0"
+			layoutY="435.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false" />
+		<RadioButton fx:id="RBRammallah1" layoutX="499.0"
+			layoutY="531.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="10.5" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJerusalem1" layoutX="504.0"
+			layoutY="555.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBBethlehem1" layoutX="496.0"
+			layoutY="577.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBHebron1" layoutX="461.0"
+			layoutY="622.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBJericho1" layoutX="542.0"
+			layoutY="535.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false" />
+		<RadioButton fx:id="RBNazreth1" layoutX="511.0"
+			layoutY="314.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBSalfit1" layoutX="472.0"
+			layoutY="475.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false" />
+		<RadioButton fx:id="RBBeirAlSabe1" layoutX="407.0"
+			layoutY="699.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBGaza1" layoutX="344.0"
+			layoutY="624.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBTulkaerm1" layoutX="464.0"
+			layoutY="400.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBNablus1" layoutX="507.0"
+			layoutY="430.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+		<RadioButton fx:id="RBHaifa1" layoutX="450.0"
+			layoutY="286.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false" />
+		<RadioButton fx:id="RBAcre1" layoutX="469.0"
+			layoutY="255.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false" />
+		<RadioButton fx:id="RBSafad1" layoutX="557.0"
+			layoutY="240.0" mnemonicParsing="false" onAction="#SelectGoalCity"
+			toggleGroup="$GoalCities" visible="false">
+			<font>
+				<Font size="11.0" />
+			</font>
+		</RadioButton>
+
+
+		<Label fx:id="ErrorGoal" layoutX="250.0" layoutY="750.0"
+			text=" You Can't Run Before Choosing the Goal" textFill="WHITE"
+			visible="false">
+			<font>
+				<Font name="Times New Roman Bold" size="16.0" />
+			</font>
+		</Label>
+		<Label fx:id="msg1" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="20.0" layoutY="236.0" prefHeight="70.0" prefWidth="800.0"
+			text="ARTIFICIAL INTELLIGENCE - ENCS3340" textFill="#ffe100">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="35.0" />
+			</font>
+		</Label>
+		<Label fx:id="msg2" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="14.0" layoutY="395.0" prefHeight="58.0" prefWidth="761.0"
+			text="Welcome To AI Project " textFill="#ffe100">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="50.0" />
+			</font>
+		</Label>
+
+		<Label fx:id="msg3" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="14.0" layoutY="456.0" prefHeight="58.0" prefWidth="761.0"
+			text="If you want to close the program, press Exit" textFill="WHITE">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="30.0" />
+			</font>
+		</Label>
+		<Label fx:id="msg4" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="10.0" layoutY="505.0" prefHeight="58.0" prefWidth="761.0"
+			text="If you want to run the program, press on run" textFill="WHITE">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="30.0" />
+			</font>
+		</Label>
+		<Label fx:id="msg5" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="9.0" layoutY="648.0" prefHeight="58.0" prefWidth="261.0"
+			text="Nour Naji- 1190270" textFill="WHITE">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="25.0" />
+			</font>
+		</Label>
+		<Label fx:id="msg6" alignment="CENTER" contentDisplay="CENTER"
+			layoutX="488.0" layoutY="648.0" prefHeight="58.0" prefWidth="254.0"
+			text="Rasha Rimawi -1190547" textFill="WHITE">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="25.0" />
+			</font>
+		</Label>
+		<Button fx:id="exit" layoutX="15.0" layoutY="715.0"
+			mnemonicParsing="false" onAction="#exit" prefHeight="45.0"
+			prefWidth="97.0"
+			style="-fx-border-color: DARKRED; -fx-border-width: 3; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-insets: 2;"
+			text="Exit">
+			<font>
+				<Font name="Times New Roman Bold Italic" size="15.0" />
+			</font>
+			<graphic>
+				<ImageView blendMode="HARD_LIGHT" fitHeight="35.0"
+					fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image
+							url="C:\Users\hp\Desktop\Ai project1\AI_Project\src\Pictures\exitIcon.jfif" />
+					</image>
+				</ImageView>
+			</graphic>
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
+		</Button>
+	</children>
+</AnchorPane>
+
